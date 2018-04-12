@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+    <!--上下文-->
+    <contextName>logback</contextName>
+    <!--设置变量  定义变量后可以使用${log.path}-->
+    <property name="log.path" value="F:\\E\\logback2.log"/>
+
+    <!--输出到控制台,appender用来格式化日志输出节点，有两个属性name和class，class用来制定哪种输出策略
+        常用就是控制台输出策略和文件输出策略
+    -->
+
+        <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+                <pattern>%d{HH:mm:ss.SSS} %contextName [%thread] %-5level %logger{36} -%msg%n</pattern>
+            </encoder>
+        </appender>
+
+
+
+    <!--输出到文件-->
+
+        <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <file>${log.path}</file>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>logback.%d{yyyy-MM-dd}.log</fileNamePattern>
+            </rollingPolicy>
+            <encoder>
+                <pattern>%d{HH:mm:ss.SSS} %contextName [%thread] %-5level %logger{36} - %msg%n</pattern>
+            </encoder>
+        </appender>
+
+
+
+
+    <!--root节点是必选节点，只有一个level属性-->
+    <root level="info">
+        <appender-ref ref="console"/>
+        <appender-ref ref="file"/>
+    </root>
+
+    <!-- logger用来设置某一个包或者具体的某一个类的日志打印级别，以及指定<appender>.<logger>仅有一个name属性，
+    一个level和一个可选的addtivity属性-->
+    <logger name="com.andlinks.mybatis.controller"/>
+
+</configuration>

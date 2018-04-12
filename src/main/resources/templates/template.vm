@@ -1,0 +1,14 @@
+<html>
+<body>
+<h3>你好,${account},欢迎注册本系统!</h3>
+<p>
+    请在2分钟内点击
+##    prod 8777
+##    <button style="-webkit-border-radius:10px ;-moz-border-radius:10px ;border-radius: 10px;background:dodgerblue"><a style="color:white;text-decoration: none" href="http://localhost:8777/activeUser?account=${account}">点击激活</a></button>
+##--------------------
+##    dev 8888
+    <button style="-webkit-border-radius:10px ;-moz-border-radius:10px ;border-radius: 10px;background:dodgerblue"><a style="color:white;text-decoration: none" href="http://localhost:8888/activeUser?account=${account}">点击激活</a></button>
+</p>
+<h2></h2>
+</body>
+</html>

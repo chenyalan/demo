@@ -1,0 +1,224 @@
+18:41:18.214 logback [main] INFO  com.andlinks.mybatis.Start - Starting Start on 猪的电脑 with PID 51024 (C:\Users\Administrator\Desktop\mybatis\target\classes started by Administrator in C:\Users\Administrator\Desktop\mybatis)
+18:41:18.216 logback [main] INFO  com.andlinks.mybatis.Start - The following profiles are active: prod
+18:41:18.259 logback [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3ce1e309: startup date [Wed Nov 29 18:41:18 CST 2017]; root of context hierarchy
+18:41:18.455 logback [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+18:41:19.622 logback [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ce6f28] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+18:41:20.143 logback [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8089 (http)
+18:41:20.152 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+18:41:20.152 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+18:41:20.243 logback [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+18:41:20.244 logback [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1985 ms
+18:41:20.384 logback [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+18:41:20.388 logback [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+18:41:20.389 logback [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+18:41:20.389 logback [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+18:41:20.389 logback [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+18:41:21.018 logback [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user],methods=[POST]}" onto public com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User> com.andlinks.mybatis.controller.UserController.add(com.andlinks.mybatis.entity.User)
+18:41:21.018 logback [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user],methods=[GET]}" onto public com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User> com.andlinks.mybatis.controller.UserController.findUser(java.lang.String)
+18:41:21.019 logback [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/{id}],methods=[PUT]}" onto public com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User> com.andlinks.mybatis.controller.UserController.updateUser(java.lang.Integer,com.andlinks.mybatis.entity.User)
+18:41:21.019 logback [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/all],methods=[GET]}" onto public com.andlinks.mybatis.common.ResultData<java.util.List<com.andlinks.mybatis.entity.User>> com.andlinks.mybatis.controller.UserController.findAll(java.lang.Integer,java.lang.Integer)
+18:41:21.019 logback [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/v2/api-docs],methods=[GET]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String)
+18:41:21.021 logback [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+18:41:21.022 logback [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+18:41:21.022 logback [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+18:41:21.024 logback [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+18:41:21.025 logback [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+18:41:21.308 logback [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3ce1e309: startup date [Wed Nov 29 18:41:18 CST 2017]; root of context hierarchy
+18:41:21.348 logback [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+18:41:21.348 logback [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+18:41:21.377 logback [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+18:41:21.641 logback [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+18:41:21.642 logback [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+18:41:21.646 logback [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+18:41:21.655 logback [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+18:41:21.668 logback [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found {0} custom documentation plugin(s)
+18:41:21.756 logback [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+18:41:21.759 logback [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method findAll was user-controller
+18:41:21.760 logback [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Request mapping: findAll belongs to groups: [[ResourceGroup{groupName='user-controller', position=0, controller=com.andlinks.mybatis.controller.UserController}]] 
+18:41:21.761 logback [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method updateUser was user-controller
+18:41:21.761 logback [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Request mapping: updateUser belongs to groups: [[ResourceGroup{groupName='user-controller', position=0, controller=com.andlinks.mybatis.controller.UserController}]] 
+18:41:21.761 logback [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method add was user-controller
+18:41:21.761 logback [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Request mapping: add belongs to groups: [[ResourceGroup{groupName='user-controller', position=0, controller=com.andlinks.mybatis.controller.UserController}]] 
+18:41:21.761 logback [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method findUser was user-controller
+18:41:21.762 logback [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Request mapping: findUser belongs to groups: [[ResourceGroup{groupName='user-controller', position=0, controller=com.andlinks.mybatis.controller.UserController}]] 
+18:41:21.764 logback [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Created resource listing Path: /default/user-controller Description: user-controller Position: 0
+18:41:21.782 logback [main] INFO  s.d.schema.ModelContextKeyGenerator - Cache Key Generated: com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User>(true)
+18:41:21.782 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache models with key com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User>(true)
+18:41:21.787 logback [main] INFO  s.d.s.p.ModelPropertiesKeyGenerator - Cache key generated: com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User>(true)
+18:41:21.787 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelProperties with key com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User>(true)
+18:41:21.809 logback [main] INFO  s.d.schema.ModelContextKeyGenerator - Cache Key Generated: com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User>(true)
+18:41:21.809 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelDependencies with key com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User>(true)
+18:41:21.811 logback [main] INFO  s.d.s.p.ModelPropertiesKeyGenerator - Cache key generated: com.andlinks.mybatis.entity.User(true)
+18:41:21.811 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelProperties with key com.andlinks.mybatis.entity.User(true)
+18:41:21.815 logback [main] INFO  s.d.s.p.ModelPropertiesKeyGenerator - Cache key generated: com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User>(true)
+18:41:21.815 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelProperties with key com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User>(true)
+18:41:21.815 logback [main] INFO  s.d.s.p.ModelPropertiesKeyGenerator - Cache key generated: com.andlinks.mybatis.entity.User(true)
+18:41:21.815 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelProperties with key com.andlinks.mybatis.entity.User(true)
+18:41:21.816 logback [main] INFO  s.d.s.p.ModelPropertiesKeyGenerator - Cache key generated: com.andlinks.mybatis.entity.User(true)
+18:41:21.816 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelProperties with key com.andlinks.mybatis.entity.User(true)
+18:41:21.817 logback [main] INFO  s.d.s.web.OperationsKeyGenerator - Cache key generated: /user.com.andlinks.mybatis.controller.UserController.add.DefaultGenericTypeNamingStrategy
+18:41:21.817 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache operations with key /user.com.andlinks.mybatis.controller.UserController.add.DefaultGenericTypeNamingStrategy
+18:41:21.830 logback [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method add was user-controller
+18:41:21.839 logback [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method add was user-controller
+18:41:21.846 logback [main] INFO  s.d.schema.ModelContextKeyGenerator - Cache Key Generated: com.andlinks.mybatis.common.ResultData<java.util.List<com.andlinks.mybatis.entity.User>>(true)
+18:41:21.846 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache models with key com.andlinks.mybatis.common.ResultData<java.util.List<com.andlinks.mybatis.entity.User>>(true)
+18:41:21.846 logback [main] INFO  s.d.s.p.ModelPropertiesKeyGenerator - Cache key generated: com.andlinks.mybatis.common.ResultData<java.util.List<com.andlinks.mybatis.entity.User>>(true)
+18:41:21.846 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelProperties with key com.andlinks.mybatis.common.ResultData<java.util.List<com.andlinks.mybatis.entity.User>>(true)
+18:41:21.847 logback [main] INFO  s.d.schema.ModelContextKeyGenerator - Cache Key Generated: com.andlinks.mybatis.common.ResultData<java.util.List<com.andlinks.mybatis.entity.User>>(true)
+18:41:21.847 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelDependencies with key com.andlinks.mybatis.common.ResultData<java.util.List<com.andlinks.mybatis.entity.User>>(true)
+18:41:21.847 logback [main] INFO  s.d.s.p.ModelPropertiesKeyGenerator - Cache key generated: com.andlinks.mybatis.entity.User(true)
+18:41:21.847 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelProperties with key com.andlinks.mybatis.entity.User(true)
+18:41:21.848 logback [main] INFO  s.d.s.p.ModelPropertiesKeyGenerator - Cache key generated: java.util.List<com.andlinks.mybatis.entity.User>(true)
+18:41:21.848 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelProperties with key java.util.List<com.andlinks.mybatis.entity.User>(true)
+18:41:21.848 logback [main] INFO  s.d.s.p.ModelPropertiesKeyGenerator - Cache key generated: com.andlinks.mybatis.common.ResultData<java.util.List<com.andlinks.mybatis.entity.User>>(true)
+18:41:21.848 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelProperties with key com.andlinks.mybatis.common.ResultData<java.util.List<com.andlinks.mybatis.entity.User>>(true)
+18:41:21.848 logback [main] INFO  s.d.s.p.ModelPropertiesKeyGenerator - Cache key generated: com.andlinks.mybatis.entity.User(true)
+18:41:21.848 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelProperties with key com.andlinks.mybatis.entity.User(true)
+18:41:21.849 logback [main] INFO  s.d.s.p.ModelPropertiesKeyGenerator - Cache key generated: com.andlinks.mybatis.entity.User(true)
+18:41:21.849 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelProperties with key com.andlinks.mybatis.entity.User(true)
+18:41:21.849 logback [main] INFO  s.d.s.web.OperationsKeyGenerator - Cache key generated: /user/all.com.andlinks.mybatis.controller.UserController.findAll.DefaultGenericTypeNamingStrategy
+18:41:21.849 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache operations with key /user/all.com.andlinks.mybatis.controller.UserController.findAll.DefaultGenericTypeNamingStrategy
+18:41:21.852 logback [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method findAll was user-controller
+18:41:21.853 logback [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method findAll was user-controller
+18:41:21.855 logback [main] INFO  s.d.schema.ModelContextKeyGenerator - Cache Key Generated: com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User>(true)
+18:41:21.855 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache models with key com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User>(true)
+18:41:21.855 logback [main] INFO  s.d.schema.ModelContextKeyGenerator - Cache Key Generated: com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User>(true)
+18:41:21.855 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelDependencies with key com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User>(true)
+18:41:21.855 logback [main] INFO  s.d.s.p.ModelPropertiesKeyGenerator - Cache key generated: com.andlinks.mybatis.entity.User(true)
+18:41:21.855 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelProperties with key com.andlinks.mybatis.entity.User(true)
+18:41:21.856 logback [main] INFO  s.d.s.web.OperationsKeyGenerator - Cache key generated: /user.com.andlinks.mybatis.controller.UserController.findUser.DefaultGenericTypeNamingStrategy
+18:41:21.856 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache operations with key /user.com.andlinks.mybatis.controller.UserController.findUser.DefaultGenericTypeNamingStrategy
+18:41:21.857 logback [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method findUser was user-controller
+18:41:21.858 logback [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method findUser was user-controller
+18:41:21.859 logback [main] INFO  s.d.schema.ModelContextKeyGenerator - Cache Key Generated: com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User>(true)
+18:41:21.859 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache models with key com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User>(true)
+18:41:21.859 logback [main] INFO  s.d.schema.ModelContextKeyGenerator - Cache Key Generated: com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User>(true)
+18:41:21.859 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelDependencies with key com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User>(true)
+18:41:21.859 logback [main] INFO  s.d.s.p.ModelPropertiesKeyGenerator - Cache key generated: com.andlinks.mybatis.entity.User(true)
+18:41:21.859 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelProperties with key com.andlinks.mybatis.entity.User(true)
+18:41:21.859 logback [main] INFO  s.d.s.web.OperationsKeyGenerator - Cache key generated: /user/{id}.com.andlinks.mybatis.controller.UserController.updateUser.DefaultGenericTypeNamingStrategy
+18:41:21.859 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache operations with key /user/{id}.com.andlinks.mybatis.controller.UserController.updateUser.DefaultGenericTypeNamingStrategy
+18:41:21.861 logback [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method updateUser was user-controller
+18:41:21.862 logback [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method updateUser was user-controller
+18:41:21.882 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8089"]
+18:41:21.891 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8089"]
+18:41:21.900 logback [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+18:41:21.914 logback [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8089 (http)
+18:41:21.918 logback [main] INFO  com.andlinks.mybatis.Start - Started Start in 4.426 seconds (JVM running for 4.807)
+18:41:40.202 logback [http-nio-8089-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+18:41:40.202 logback [http-nio-8089-exec-2] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+18:41:40.221 logback [http-nio-8089-exec-2] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 19 ms
+18:41:40.306 logback [http-nio-8089-exec-2] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+18:41:40.444 logback [http-nio-8089-exec-2] INFO  c.a.m.controller.UserController - 查询成功
+19:59:33.262 logback [main] INFO  com.andlinks.mybatis.Start - Starting Start on 猪的电脑 with PID 41328 (F:\ANDLINKS-PROJECT\springboot-mybatis-xml\target\classes started by Administrator in F:\ANDLINKS-PROJECT\springboot-mybatis-xml)
+19:59:33.265 logback [main] INFO  com.andlinks.mybatis.Start - The following profiles are active: prod
+19:59:33.312 logback [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3ce1e309: startup date [Wed Nov 29 19:59:33 CST 2017]; root of context hierarchy
+19:59:33.488 logback [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+19:59:34.469 logback [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cf5cbdf9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+19:59:35.000 logback [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8089 (http)
+19:59:35.008 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+19:59:35.009 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+19:59:35.093 logback [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+19:59:35.094 logback [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1782 ms
+19:59:35.237 logback [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+19:59:35.241 logback [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+19:59:35.241 logback [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+19:59:35.242 logback [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+19:59:35.242 logback [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+19:59:35.877 logback [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user],methods=[POST]}" onto public com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User> com.andlinks.mybatis.controller.UserController.add(com.andlinks.mybatis.entity.User)
+19:59:35.878 logback [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/{id}],methods=[PUT]}" onto public com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User> com.andlinks.mybatis.controller.UserController.updateUser(java.lang.Integer,com.andlinks.mybatis.entity.User)
+19:59:35.878 logback [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/all],methods=[GET]}" onto public com.andlinks.mybatis.common.ResultData<java.util.List<com.andlinks.mybatis.entity.User>> com.andlinks.mybatis.controller.UserController.findAll(java.lang.Integer,java.lang.Integer)
+19:59:35.878 logback [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user],methods=[GET]}" onto public com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User> com.andlinks.mybatis.controller.UserController.findUser(java.lang.String)
+19:59:35.879 logback [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/v2/api-docs],methods=[GET]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String)
+19:59:35.881 logback [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+19:59:35.881 logback [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+19:59:35.882 logback [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+19:59:35.883 logback [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+19:59:35.884 logback [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+19:59:36.168 logback [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3ce1e309: startup date [Wed Nov 29 19:59:33 CST 2017]; root of context hierarchy
+19:59:36.208 logback [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+19:59:36.208 logback [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+19:59:36.237 logback [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+19:59:36.490 logback [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+19:59:36.491 logback [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+19:59:36.497 logback [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+19:59:36.505 logback [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+19:59:36.517 logback [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found {0} custom documentation plugin(s)
+19:59:36.523 logback [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+19:59:36.526 logback [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method findAll was user-controller
+19:59:36.527 logback [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Request mapping: findAll belongs to groups: [[ResourceGroup{groupName='user-controller', position=0, controller=com.andlinks.mybatis.controller.UserController}]] 
+19:59:36.528 logback [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method updateUser was user-controller
+19:59:36.528 logback [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Request mapping: updateUser belongs to groups: [[ResourceGroup{groupName='user-controller', position=0, controller=com.andlinks.mybatis.controller.UserController}]] 
+19:59:36.528 logback [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method add was user-controller
+19:59:36.528 logback [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Request mapping: add belongs to groups: [[ResourceGroup{groupName='user-controller', position=0, controller=com.andlinks.mybatis.controller.UserController}]] 
+19:59:36.528 logback [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method findUser was user-controller
+19:59:36.529 logback [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Request mapping: findUser belongs to groups: [[ResourceGroup{groupName='user-controller', position=0, controller=com.andlinks.mybatis.controller.UserController}]] 
+19:59:36.531 logback [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Created resource listing Path: /default/user-controller Description: user-controller Position: 0
+19:59:36.659 logback [main] INFO  s.d.schema.ModelContextKeyGenerator - Cache Key Generated: com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User>(true)
+19:59:36.659 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache models with key com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User>(true)
+19:59:36.664 logback [main] INFO  s.d.s.p.ModelPropertiesKeyGenerator - Cache key generated: com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User>(true)
+19:59:36.664 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelProperties with key com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User>(true)
+19:59:36.685 logback [main] INFO  s.d.schema.ModelContextKeyGenerator - Cache Key Generated: com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User>(true)
+19:59:36.685 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelDependencies with key com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User>(true)
+19:59:36.688 logback [main] INFO  s.d.s.p.ModelPropertiesKeyGenerator - Cache key generated: com.andlinks.mybatis.entity.User(true)
+19:59:36.688 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelProperties with key com.andlinks.mybatis.entity.User(true)
+19:59:36.691 logback [main] INFO  s.d.s.p.ModelPropertiesKeyGenerator - Cache key generated: com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User>(true)
+19:59:36.691 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelProperties with key com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User>(true)
+19:59:36.691 logback [main] INFO  s.d.s.p.ModelPropertiesKeyGenerator - Cache key generated: com.andlinks.mybatis.entity.User(true)
+19:59:36.691 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelProperties with key com.andlinks.mybatis.entity.User(true)
+19:59:36.693 logback [main] INFO  s.d.s.p.ModelPropertiesKeyGenerator - Cache key generated: com.andlinks.mybatis.entity.User(true)
+19:59:36.693 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelProperties with key com.andlinks.mybatis.entity.User(true)
+19:59:36.694 logback [main] INFO  s.d.s.web.OperationsKeyGenerator - Cache key generated: /user.com.andlinks.mybatis.controller.UserController.add.DefaultGenericTypeNamingStrategy
+19:59:36.694 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache operations with key /user.com.andlinks.mybatis.controller.UserController.add.DefaultGenericTypeNamingStrategy
+19:59:36.709 logback [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method add was user-controller
+19:59:36.720 logback [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method add was user-controller
+19:59:36.727 logback [main] INFO  s.d.schema.ModelContextKeyGenerator - Cache Key Generated: com.andlinks.mybatis.common.ResultData<java.util.List<com.andlinks.mybatis.entity.User>>(true)
+19:59:36.727 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache models with key com.andlinks.mybatis.common.ResultData<java.util.List<com.andlinks.mybatis.entity.User>>(true)
+19:59:36.727 logback [main] INFO  s.d.s.p.ModelPropertiesKeyGenerator - Cache key generated: com.andlinks.mybatis.common.ResultData<java.util.List<com.andlinks.mybatis.entity.User>>(true)
+19:59:36.728 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelProperties with key com.andlinks.mybatis.common.ResultData<java.util.List<com.andlinks.mybatis.entity.User>>(true)
+19:59:36.730 logback [main] INFO  s.d.schema.ModelContextKeyGenerator - Cache Key Generated: com.andlinks.mybatis.common.ResultData<java.util.List<com.andlinks.mybatis.entity.User>>(true)
+19:59:36.730 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelDependencies with key com.andlinks.mybatis.common.ResultData<java.util.List<com.andlinks.mybatis.entity.User>>(true)
+19:59:36.731 logback [main] INFO  s.d.s.p.ModelPropertiesKeyGenerator - Cache key generated: com.andlinks.mybatis.entity.User(true)
+19:59:36.731 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelProperties with key com.andlinks.mybatis.entity.User(true)
+19:59:36.731 logback [main] INFO  s.d.s.p.ModelPropertiesKeyGenerator - Cache key generated: java.util.List<com.andlinks.mybatis.entity.User>(true)
+19:59:36.731 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelProperties with key java.util.List<com.andlinks.mybatis.entity.User>(true)
+19:59:36.731 logback [main] INFO  s.d.s.p.ModelPropertiesKeyGenerator - Cache key generated: com.andlinks.mybatis.common.ResultData<java.util.List<com.andlinks.mybatis.entity.User>>(true)
+19:59:36.731 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelProperties with key com.andlinks.mybatis.common.ResultData<java.util.List<com.andlinks.mybatis.entity.User>>(true)
+19:59:36.732 logback [main] INFO  s.d.s.p.ModelPropertiesKeyGenerator - Cache key generated: com.andlinks.mybatis.entity.User(true)
+19:59:36.732 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelProperties with key com.andlinks.mybatis.entity.User(true)
+19:59:36.732 logback [main] INFO  s.d.s.p.ModelPropertiesKeyGenerator - Cache key generated: com.andlinks.mybatis.entity.User(true)
+19:59:36.732 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelProperties with key com.andlinks.mybatis.entity.User(true)
+19:59:36.732 logback [main] INFO  s.d.s.web.OperationsKeyGenerator - Cache key generated: /user/all.com.andlinks.mybatis.controller.UserController.findAll.DefaultGenericTypeNamingStrategy
+19:59:36.732 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache operations with key /user/all.com.andlinks.mybatis.controller.UserController.findAll.DefaultGenericTypeNamingStrategy
+19:59:36.734 logback [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method findAll was user-controller
+19:59:36.736 logback [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method findAll was user-controller
+19:59:36.737 logback [main] INFO  s.d.schema.ModelContextKeyGenerator - Cache Key Generated: com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User>(true)
+19:59:36.737 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache models with key com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User>(true)
+19:59:36.737 logback [main] INFO  s.d.schema.ModelContextKeyGenerator - Cache Key Generated: com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User>(true)
+19:59:36.737 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelDependencies with key com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User>(true)
+19:59:36.738 logback [main] INFO  s.d.s.p.ModelPropertiesKeyGenerator - Cache key generated: com.andlinks.mybatis.entity.User(true)
+19:59:36.738 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelProperties with key com.andlinks.mybatis.entity.User(true)
+19:59:36.738 logback [main] INFO  s.d.s.web.OperationsKeyGenerator - Cache key generated: /user.com.andlinks.mybatis.controller.UserController.findUser.DefaultGenericTypeNamingStrategy
+19:59:36.738 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache operations with key /user.com.andlinks.mybatis.controller.UserController.findUser.DefaultGenericTypeNamingStrategy
+19:59:36.739 logback [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method findUser was user-controller
+19:59:36.740 logback [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method findUser was user-controller
+19:59:36.742 logback [main] INFO  s.d.schema.ModelContextKeyGenerator - Cache Key Generated: com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User>(true)
+19:59:36.742 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache models with key com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User>(true)
+19:59:36.743 logback [main] INFO  s.d.schema.ModelContextKeyGenerator - Cache Key Generated: com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User>(true)
+19:59:36.743 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelDependencies with key com.andlinks.mybatis.common.ResultData<com.andlinks.mybatis.entity.User>(true)
+19:59:36.743 logback [main] INFO  s.d.s.p.ModelPropertiesKeyGenerator - Cache key generated: com.andlinks.mybatis.entity.User(true)
+19:59:36.743 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache modelProperties with key com.andlinks.mybatis.entity.User(true)
+19:59:36.744 logback [main] INFO  s.d.s.web.OperationsKeyGenerator - Cache key generated: /user/{id}.com.andlinks.mybatis.controller.UserController.updateUser.DefaultGenericTypeNamingStrategy
+19:59:36.744 logback [main] INFO  s.d.spring.web.caching.CachingAspect - Caching aspect applied for cache operations with key /user/{id}.com.andlinks.mybatis.controller.UserController.updateUser.DefaultGenericTypeNamingStrategy
+19:59:36.747 logback [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method updateUser was user-controller
+19:59:36.748 logback [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method updateUser was user-controller
+19:59:36.770 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8089"]
+19:59:36.779 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8089"]
+19:59:36.789 logback [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+19:59:36.805 logback [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8089 (http)
+19:59:36.810 logback [main] INFO  com.andlinks.mybatis.Start - Started Start in 4.208 seconds (JVM running for 4.728)
+19:59:56.519 logback [http-nio-8089-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+19:59:56.519 logback [http-nio-8089-exec-2] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+19:59:56.540 logback [http-nio-8089-exec-2] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 21 ms
+19:59:56.617 logback [http-nio-8089-exec-2] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+19:59:56.751 logback [http-nio-8089-exec-2] INFO  c.a.m.controller.UserController - 查询成功
