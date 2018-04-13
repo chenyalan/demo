@@ -1,6 +1,6 @@
 package com.andlinks.mybatis.utils;
 
-import com.sun.xml.internal.ws.api.pipe.FiberContextSwitchInterceptor;
+
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.util.IOUtils;
@@ -119,14 +119,14 @@ public class ExcelUtils {
         pict.resize();
         return workbook;
     }
-    public static void main(String[] args) throws IOException {
-        File file=new File("C:\\Users\\Administrator\\Desktop\\picture.xlsx");
-        InputStream in=new FileInputStream(file);
-        Workbook workbook=getWorkBook(in,file.getName());
-        Sheet sheet=workbook.getSheetAt(0);
-        workbook=ExcelUtils.createPictureInExcel("C:\\Users\\Administrator\\Desktop\\test.jpg",workbook,sheet);
-        FileOutputStream fo=new FileOutputStream("C:\\Users\\Administrator\\Desktop\\picture.xlsx");
-        workbook.write(fo);
-    }
+//    public static void main(String[] args) throws IOException {
+//        File file=new File("/home/cyl/桌面/wps.xlsx");
+//        InputStream in=new FileInputStream(file);
+//        Workbook workbook=getWorkBook(in,file.getName());
+//        Sheet sheet=workbook.getSheetAt(0);
+//        workbook=ExcelUtils.createPictureInExcel("/home/cyl/桌面/ph.jpeg",workbook,sheet);
+//        FileOutputStream fo=new FileOutputStream("/home/cyl/桌面/wps.xlsx");
+//        workbook.write(fo);
+//    }
 
 }
