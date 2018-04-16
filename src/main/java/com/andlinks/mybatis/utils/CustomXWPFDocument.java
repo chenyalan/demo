@@ -1,6 +1,8 @@
 package com.andlinks.mybatis.utils;
 
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.openxml4j.opc.OPCPackage;
+import org.apache.poi.xwpf.usermodel.Document;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.xmlbeans.XmlException;
@@ -9,8 +11,7 @@ import org.openxmlformats.schemas.drawingml.x2006.main.CTNonVisualDrawingProps;
 import org.openxmlformats.schemas.drawingml.x2006.main.CTPositiveSize2D;
 import org.openxmlformats.schemas.drawingml.x2006.wordprocessingDrawing.CTInline;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 
 /**
  * Created by 陈亚兰 on 2018/4/16.
@@ -36,23 +37,24 @@ public class CustomXWPFDocument extends XWPFDocument{
         super(pkg);
         // TODO Auto-generated constructor stub
     }  // picAttch 图片后面追加的字符串 可以是空格
-    public void createPicture(XWPFParagraph paragraph,int id, int width, int height,String picAttch) {
+    public void createPicture(XWPFParagraph paragraph,int id, int width, int height,String blipId) throws FileNotFoundException, InvalidFormatException {
         final int EMU = 9525;
         width *= EMU;
         height *= EMU;
-        String blipId = getAllPictures().get(id).getPackageRelationship()
-                .getId();
-
-        CTInline inline = paragraph.createRun().getCTR()
-                .addNewDrawing().addNewInline();
-        paragraph.createRun().setText(picAttch);
+        if (paragraph == null) {
+            paragraph = createParagraph();
+        }
+        CTInline inline = paragraph.createRun().getCTR().addNewDrawing()
+                .addNewInline();
         String picXml = ""
                 + "<a:graphic xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\">"
                 + "   <a:graphicData uri=\"http://schemas.openxmlformats.org/drawingml/2006/picture\">"
                 + "      <pic:pic xmlns:pic=\"http://schemas.openxmlformats.org/drawingml/2006/picture\">"
                 + "         <pic:nvPicPr>" + "            <pic:cNvPr id=\""
                 + id
-                + "\" name=\"Generated\"/>"
+                + "\" name=\"img_"
+                + id
+                + "\"/>"
                 + "            <pic:cNvPicPr/>"
                 + "         </pic:nvPicPr>"
                 + "         <pic:blipFill>"
@@ -78,9 +80,8 @@ public class CustomXWPFDocument extends XWPFDocument{
                 + "         </pic:spPr>"
                 + "      </pic:pic>"
                 + "   </a:graphicData>" + "</a:graphic>";
-
         // CTGraphicalObjectData graphicData =
-        inline.addNewGraphic().addNewGraphicData();
+        // inline.addNewGraphic().addNewGraphicData();
         XmlToken xmlToken = null;
         try {
             xmlToken = XmlToken.Factory.parse(picXml);
@@ -89,19 +90,16 @@ public class CustomXWPFDocument extends XWPFDocument{
         }
         inline.set(xmlToken);
         // graphicData.set(xmlToken);
-
-        inline.setDistT(0);
+        inline.setDistT(-10);
         inline.setDistB(0);
         inline.setDistL(0);
         inline.setDistR(0);
-
         CTPositiveSize2D extent = inline.addNewExtent();
         extent.setCx(width);
         extent.setCy(height);
-
         CTNonVisualDrawingProps docPr = inline.addNewDocPr();
         docPr.setId(id);
-        docPr.setName("图片" + id);
-        docPr.setDescr("");
+        docPr.setName("docx_img_ " + id);
+        docPr.setDescr("docx Picture");
     }
 }

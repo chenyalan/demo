@@ -17,7 +17,6 @@ public class GetWord2 {
         XWPFTable table=document.getTables().get(0);
         XWPFTableRow row;
         XWPFTableCell cell;
-        XWPFTableCell cellNew;
         int hang=0;
         for(XWPFTableRow r:table.getRows()){
             int lie=0;
@@ -35,17 +34,13 @@ public class GetWord2 {
         cell=row.getCell(5);cell.setText("1994年4月");
         //照片
         cell=row.getCell(6);
-//        cell=shuiPing(cell);
+        mergeCellsVertically(table,6,0,2);
         cell.setVerticalAlignment(XWPFTableCell.XWPFVertAlign.CENTER);
-                byte[] byteArray=inputStreamToByteArray(new FileInputStream("C:\\Users\\Administrator\\Desktop\\zhengjian.jpg"),true);
-                ByteArrayInputStream byteArrayInputStream=new ByteArrayInputStream(byteArray);
-                String ind=document.addPictureData(byteArrayInputStream,XWPFDocument.PICTURE_TYPE_JPEG);
-                XWPFParagraph p=cell.addParagraph();
-                document.createPicture(p,document.getAllPictures().size()-1,90,120,"");
-
-
-
-        //
+        XWPFParagraph p=cell.addParagraph();
+        String blipId= p.getDocument().addPictureData(new FileInputStream(new File("C:\\Users\\Administrator\\Desktop\\zhengjian.jpg")), XWPFDocument.PICTURE_TYPE_JPEG);
+        document.createPicture(p,document.getAllPictures().size(),110,150,blipId);
+//        document.createPictureCxCy(blipId,document.getAllPictures().size(),222,333);
+        //照片over
         row=table.getRow(1);
         cell=row.getCell(1);cell.setText("汉");
         cell=row.getCell(3);cell.setText("江苏涟水");
@@ -55,8 +50,7 @@ public class GetWord2 {
         cell=row.getCell(5);cell.setText("良好");
         row=table.getRow(3);
         cell=row.getCell(1);cell.setText("大幅度大幅度反对法");
-        cellNew=row.createCell();
-        mergeCellsHorizontal(table,3,1,2);
+//        mergeCellsHorizontal(table,3,1,2);
         cell=row.getCell(3);cell.setText("几十块的积分打孔积分抵扣");
         row=table.getRow(4);
         cell=row.getCell(2);cell.setText("金陵科技学院");
@@ -90,7 +84,12 @@ public class GetWord2 {
     }
     public static XWPFTableCell shuiPing(XWPFTableCell cell){
         CTTc cttc = cell.getCTTc();
-        CTP ctp = cttc.getPList().get(0);
+        CTP ctp=null;
+        if(cttc.getPList().get(0)==null){
+            ctp=cttc.addNewP();
+        }else{
+            cttc.getPList().get(0);
+        }
         CTPPr ctppr = ctp.getPPr();
         if (ctppr == null) {
             ctppr = ctp.addNewPPr();
@@ -112,6 +111,19 @@ public class GetWord2 {
             } else {
                 // Cells which join (merge) the first one, are set with CONTINUE
                 cell.getCTTc().addNewTcPr().addNewHMerge().setVal(STMerge.CONTINUE);
+            }
+        }
+    }
+    //跨行合并
+    public static void mergeCellsVertically(XWPFTable table, int col, int fromRow, int toRow) {
+        for (int rowIndex = fromRow; rowIndex <= toRow; rowIndex++) {
+            XWPFTableCell cell = table.getRow(rowIndex).getCell(col);
+            if ( rowIndex == fromRow ) {
+                // The first merged cell is set with RESTART merge value
+                cell.getCTTc().addNewTcPr().addNewVMerge().setVal(STMerge.RESTART);
+            } else {
+                // Cells which join (merge) the first one, are set with CONTINUE
+                cell.getCTTc().addNewTcPr().addNewVMerge().setVal(STMerge.CONTINUE);
             }
         }
     }
