@@ -37,7 +37,7 @@ public class GetWord2 {
         mergeCellsVertically(table,6,0,2);
         cell.setVerticalAlignment(XWPFTableCell.XWPFVertAlign.CENTER);
         XWPFParagraph p=cell.addParagraph();
-        String blipId= p.getDocument().addPictureData(new FileInputStream(new File("C:\\Users\\Administrator\\Desktop\\zhengjian.jpg")), XWPFDocument.PICTURE_TYPE_JPEG);
+        String blipId= p.getDocument().addPictureData(new FileInputStream(new File("C:\\Users\\Administrator\\Desktop\\fd.jpg")), XWPFDocument.PICTURE_TYPE_JPEG);
         document.createPicture(p,document.getAllPictures().size(),110,150,blipId);
 //        document.createPictureCxCy(blipId,document.getAllPictures().size(),222,333);
         //照片over
