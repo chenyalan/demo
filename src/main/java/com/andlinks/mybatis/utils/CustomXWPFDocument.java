@@ -2,7 +2,6 @@ package com.andlinks.mybatis.utils;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.openxml4j.opc.OPCPackage;
-import org.apache.poi.xwpf.usermodel.Document;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.xmlbeans.XmlException;
@@ -90,7 +89,7 @@ public class CustomXWPFDocument extends XWPFDocument{
         }
         inline.set(xmlToken);
         // graphicData.set(xmlToken);
-        inline.setDistT(-10);
+        inline.setDistT(10);
         inline.setDistB(0);
         inline.setDistL(0);
         inline.setDistR(0);
