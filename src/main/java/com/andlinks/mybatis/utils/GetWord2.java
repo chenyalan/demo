@@ -34,11 +34,13 @@ public class GetWord2 {
         cell=row.getCell(5);cell.setText("1994年4月");
         //照片
         cell=row.getCell(6);
-        mergeCellsVertically(table,6,0,2);
         cell.setVerticalAlignment(XWPFTableCell.XWPFVertAlign.CENTER);
         XWPFParagraph p=cell.addParagraph();
         String blipId= p.getDocument().addPictureData(new FileInputStream(new File("/home/cyl/桌面/u.jpeg")), XWPFDocument.PICTURE_TYPE_JPEG);
         document.createPicture(p,document.getAllPictures().size(),110,150,blipId);
+        for(int i=0;i<2;i++){
+            cell.removeParagraph(0);
+        }
 //        document.createPictureCxCy(blipId,document.getAllPictures().size(),222,333);
         //照片over
         row=table.getRow(1);

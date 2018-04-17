@@ -13,6 +13,8 @@
             </pic:blipFill>
             <pic:spPr>
                 <a:xfrm>
+                    <!--<a:off x="0" y="0"/>-->
+                    <!--<a:ext cx="1047750" cy="1428750"/>-->
                     <a:off x="0" y="0"/>
                     <a:ext cx="1047750" cy="1428750"/>
                 </a:xfrm>
