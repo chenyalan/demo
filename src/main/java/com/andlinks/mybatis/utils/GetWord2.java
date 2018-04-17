@@ -8,6 +8,7 @@ import java.util.List;
 
 /**
  * Created by 陈亚兰 on 2018/4/16.
+ * poi word 处理表格
  */
 public class GetWord2 {
     public static void getWord(String path) throws IOException, org.apache.poi.openxml4j.exceptions.InvalidFormatException {
