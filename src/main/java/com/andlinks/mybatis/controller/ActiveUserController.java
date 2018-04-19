@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
+import springfox.documentation.annotations.ApiIgnore;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
@@ -25,7 +26,7 @@ public class ActiveUserController {
     private SysService sysService;
     @ApiOperation("激活用户")
     @GetMapping("/activeUser")
-    public ModelAndView activeUser(HttpServletRequest request, ModelAndView model){
+    public ModelAndView activeUser(HttpServletRequest request, @ApiIgnore ModelAndView model){
         String account=request.getParameter("account");
         SysUserDO user=sysService.findByAccount(account);
         Date now=new Date();

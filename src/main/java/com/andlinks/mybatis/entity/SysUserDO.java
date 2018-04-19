@@ -46,12 +46,12 @@ public class SysUserDO extends BaseEntity implements Serializable {
     private String remark;
     private String photoAddress;
 
-    private Date salt;
+    private String salt;
 
     private State userState;
     public SysUserDO(){}
     //用户注册时所调构造函数，状态初始正在注册
-    public SysUserDO(String account,String username,String password,String email,Date salt){
+    public SysUserDO(String account,String username,String password,String email,String salt){
         this.account=account;
         this.username=username;
         this.password=password;
@@ -61,7 +61,7 @@ public class SysUserDO extends BaseEntity implements Serializable {
         this.setDeleted(false);
     }
     //添加用户所调构造函数，可以直接使用
-    public SysUserDO(String account,String username,String password,String telephone,String email,String address,String className,String grade,Sex sex,String remark,Date salt){
+    public SysUserDO(String account,String username,String password,String telephone,String email,String address,String className,String grade,Sex sex,String remark,String  salt){
         this.account=account;
         this.username=username;
         this.password=password;
@@ -72,7 +72,7 @@ public class SysUserDO extends BaseEntity implements Serializable {
         this.grade=grade;
         this.sex=sex;
         this.remark=remark;
-        this.salt=new Date();
+        this.salt=salt;
         this.setDeleted(false);
         this.setUserState(State.Using);
     }

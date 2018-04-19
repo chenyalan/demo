@@ -31,4 +31,9 @@ public class SysPermissionDO extends BaseEntity implements Serializable {
     @JsonBackReference
     @ManyToMany(mappedBy = "permissions")
     private Set<SysRoleDO> roles;
+    public  SysPermissionDO(){}
+    public  SysPermissionDO(String permissionCN,String permissionEN){
+        this.permissionCN=permissionCN;
+        this.permissionEN=permissionEN;
+    }
 }

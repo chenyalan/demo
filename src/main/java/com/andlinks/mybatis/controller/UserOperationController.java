@@ -65,7 +65,7 @@ public class UserOperationController {
         if(sysUserDO==null){
             return ResultData.error("不存在本账号");
         }
-        if(!PassWordUtils.equals(password,DateTransUtils.getStringSec(sysUserDO.getSalt()),sysUserDO.getPassword())){
+        if(!PassWordUtils.equals(password,sysUserDO.getSalt(),sysUserDO.getPassword())){
             return ResultData.error("密码错误");
         }
         Set<PermissionVO> permissionDOSet=new HashSet<>();
@@ -99,7 +99,7 @@ public class UserOperationController {
             return ResultData.error("密码为6-20位");
         }
         SysUserDO sysUserDO=sysService.findByUserId(id);
-        sysUserDO.setPassword(PassWordUtils.privatePassWord(password,DateTransUtils.getStringSec(sysUserDO.getSalt())));
+        sysUserDO.setPassword(PassWordUtils.privatePassWord(password,sysUserDO.getSalt()));
         sysService.add(sysUserDO);
         return ResultData.success("修改成功");
     }
