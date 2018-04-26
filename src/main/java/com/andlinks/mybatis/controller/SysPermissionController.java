@@ -28,12 +28,7 @@ public class SysPermissionController {
     @Autowired
     private SysService sysService;
 
-    @PostMapping
-    @ApiOperation("权限添加")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name="permissionCN",value = "权限中文",dataType = "String",paramType = "query"),
-            @ApiImplicitParam(name="permissionEN",value = "权限英文",dataType = "String",paramType = "query")
-    })
+    @RequestMapping(method = RequestMethod.POST)
     public ResultData addPermission(String permissionCN,String permissionEN){
         SysPermissionDO sysPermissionDO=new SysPermissionDO(permissionCN,permissionEN);
         return ResultData.success(sysService.add(sysPermissionDO));

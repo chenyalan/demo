@@ -39,7 +39,7 @@ public class SysUserController {
     private JavaMailUtils javaMailUtils;
 
     @ApiOperation("用户添加")
-    @PostMapping("/{roleId}")
+    @RequestMapping(method = RequestMethod.POST)
     @ApiImplicitParams({
             @ApiImplicitParam(name="userVO",value="系统用户",paramType = "body",dataType ="UserVO"),
             @ApiImplicitParam(name="roleId",value = "角色ID",paramType = "path",dataType = "Long")
@@ -68,7 +68,7 @@ public class SysUserController {
 
 
     @ApiOperation("用户首页注册")
-    @PostMapping("/register")
+    @RequestMapping(value = "/register",method = RequestMethod.POST)
     @ApiImplicitParams({
             @ApiImplicitParam(name="registerVO",value="系统用户",paramType = "body",dataType ="RegisterVO"),
             @ApiImplicitParam(name="roleId",value = "角色ID",paramType = "query",dataType = "Long")
