@@ -6,11 +6,9 @@ import com.andlinks.mybatis.entity.SysPermissionDO;
 import com.andlinks.mybatis.entity.SysUserDO;
 import com.andlinks.mybatis.entity.redis.UserRedis;
 import com.andlinks.mybatis.entity.vo.PermissionVO;
-import com.andlinks.mybatis.entity.vo.UserVO;
 import com.andlinks.mybatis.service.SysService;
 import com.andlinks.mybatis.service.redis.UserRedisService;
 import com.andlinks.mybatis.utils.CookieUtils;
-import com.andlinks.mybatis.utils.DateTransUtils;
 import com.andlinks.mybatis.utils.PassWordUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -18,26 +16,18 @@ import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang.time.DateUtils;
-import org.apache.poi.ss.formula.functions.T;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cache.annotation.Cacheable;
-import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
-import javax.validation.Valid;
-import java.nio.channels.AcceptPendingException;
 import java.text.ParseException;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by 陈亚兰 on 2018/2/26.

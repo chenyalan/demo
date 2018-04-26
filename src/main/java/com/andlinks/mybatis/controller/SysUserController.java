@@ -106,6 +106,30 @@ public class SysUserController {
         return ResultData.success(sysService.getUser(pageable));
     }
 
+    /**
+     * {
+     "id": 52,
+     "deleted": false,
+     "createDate": 1524191952000,
+     "modifyDate": 1524191845000,
+     "account": "leeaoyuan",
+     "username": "李袄原",
+     "password": "6c15fb47a604fb62b2986a821f8e980a",
+     "telephone": null,
+     "email": "sharp_94free@163.com",
+     "address": "首尔顶顶顶",
+     "className": "首尔大学",
+     "grade": null,
+     "sex": "FEMALE",
+     "remark": null,
+     "photoAddress": null,
+     "salt": "4hJc",
+     "userState": "Using"
+     }  account  id 密码 deleted createDate modifyDate 不能更改
+     * @param sysUserDO
+     * @param roleId
+     * @return
+     */
     @ApiOperation("用户更新,密码不改")
     @PutMapping("/{roleId}")
     @ApiImplicitParams({
@@ -115,6 +139,7 @@ public class SysUserController {
     public ResultData updateUser(@RequestBody SysUserDO sysUserDO,@PathVariable Long roleId){
         SysRoleDO sysRoleDO=sysService.findByRoleId(roleId);
         sysUserDO.setRole(sysRoleDO);
+        sysUserDO.setDeleted(false);
         sysService.add(sysUserDO);
         return ResultData.success("更新成功");
     }
@@ -124,6 +149,9 @@ public class SysUserController {
     @ApiImplicitParam(name = "id",value = "用户id",paramType = "path",dataType = "Long")
     public ResultData deleteUser(@PathVariable Long id){
         SysUserDO sysUserDO=sysService.findByUserId(id);
+        if(sysUserDO==null){
+            return ResultData.error("不存在该用户");
+        }
         sysUserDO.setDeleted(true);
         sysService.add(sysUserDO);
         return ResultData.success("删除成功");
