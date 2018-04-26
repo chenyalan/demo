@@ -15,73 +15,89 @@ public class GetWord2 {
         File file=new File(path);
         FileInputStream fi=new FileInputStream(file);
         CustomXWPFDocument document=new CustomXWPFDocument(fi);
-        XWPFTable table=document.getTables().get(0);
-        XWPFTableRow row;
-        XWPFTableCell cell;
-        int hang=0;
-        for(XWPFTableRow r:table.getRows()){
-            int lie=0;
-            for(XWPFTableCell c:r.getTableCells()){
-                System.out.print(hang+"行"+lie+"列:"+c.getText()+ "\t");
-                lie++;
+        List<XWPFTable> tables=document.getTables();
+        for(int i=0;i<tables.size();i++){
+            XWPFTable table=document.getTables().get(i);
+            XWPFTableRow row;
+            XWPFTableCell cell;
+            int hang=0;
+            for(XWPFTableRow r:table.getRows()){
+                int lie=0;
+                for(XWPFTableCell c:r.getTableCells()){
+                    System.out.print(hang+"行"+lie+"列:"+c.getText()+ "\t");
+                    lie++;
+                }
+                System.out.print("\n");
+                hang++;
             }
-            System.out.print("\n");
-            hang++;
         }
-        row=table.getRow(0);
-        cell=row.getCell(1);
-        cell.setText("陈亚兰");
-        cell=row.getCell(3);cell.setText("女");
-        cell=row.getCell(5);cell.setText("1994年4月");
-        //照片
-        cell=row.getCell(6);
-        cell.setVerticalAlignment(XWPFTableCell.XWPFVertAlign.CENTER);
-        XWPFParagraph p=cell.addParagraph();
-        String blipId= p.getDocument().addPictureData(new FileInputStream(new File("/home/cyl/桌面/u.jpeg")), XWPFDocument.PICTURE_TYPE_JPEG);
-        document.createPicture(p,document.getAllPictures().size(),110,150,blipId);
-        for(int i=0;i<2;i++){
-            cell.removeParagraph(0);
-        }
-//        document.createPictureCxCy(blipId,document.getAllPictures().size(),222,333);
-        //照片over
-        row=table.getRow(1);
-        cell=row.getCell(1);cell.setText("汉");
-        cell=row.getCell(3);cell.setText("江苏涟水");
-        cell=row.getCell(5);cell.setText("江苏");
-        row=table.getRow(2);
-        cell=row.getCell(3);cell.setText("2016年7月");
-        cell=row.getCell(5);cell.setText("良好");
-        row=table.getRow(3);
-        cell=row.getCell(1);cell.setText("大幅度大幅度反对法");
-//        mergeCellsHorizontal(table,3,1,2);
-        cell=row.getCell(3);cell.setText("几十块的积分打孔积分抵扣");
-        row=table.getRow(4);
-        cell=row.getCell(2);cell.setText("金陵科技学院");
-        cell=row.getCell(4);cell.setText("计算机科学与技术");
-        row=table.getRow(5);
-        cell=row.getCell(2);cell.setText("无");
-        cell=row.getCell(4);cell.setText("无");
-        row=table.getRow(6);
-        cell=row.getCell(1);cell.setText("java工程师");
-        row=table.getRow(9);
-        cell=row.getCell(1);cell.setText("2012年9月-2016年6月 金陵科技学院 \n 2016年7月-2017年3月 南京YK电气有限公司 \n 2017年4月-至今 南京安链数据科技有限公司 ");
-
-        row=table.getRow(10);
-        cell=row.getCell(1);cell.setText("无");
-        row=table.getRow(11);
-        cell=row.getCell(1);cell.setText("2016年 优秀 "+"\n"+"2017年 优秀");
-        row=table.getRow(12);
-        cell=row.getCell(1);cell.setText("dd");
-        for(int i=0;i<5;i++){
-            row=table.getRow(14+i);
-            cell=row.getCell(1);
-            cell.setText("父亲"+i);
-            cell=row.getCell(2);cell.setText("张三"+i);
-            cell=row.getCell(3);cell.setText("24"+i+1);
-            cell=row.getCell(4);cell.setText("党员");
-            cell=row.getCell(5);cell.setText("警察"+i);
-        }
-        FileOutputStream fo=new FileOutputStream("/home/cyl/桌面/dkk.docx");
+//        XWPFTable table=document.getTables().get(0);
+//        XWPFTableRow row;
+//        XWPFTableCell cell;
+//        int hang=0;
+//        for(XWPFTableRow r:table.getRows()){
+//            int lie=0;
+//            for(XWPFTableCell c:r.getTableCells()){
+//                System.out.print(hang+"行"+lie+"列:"+c.getText()+ "\t");
+//                lie++;
+//            }
+//            System.out.print("\n");
+//            hang++;
+//        }
+//        row=table.getRow(0);
+//        cell=row.getCell(1);
+//        cell.setText("陈亚兰");
+//        cell=row.getCell(3);cell.setText("女");
+//        cell=row.getCell(5);cell.setText("1994年4月");
+//        //照片
+//        cell=row.getCell(6);
+//        cell.setVerticalAlignment(XWPFTableCell.XWPFVertAlign.CENTER);
+//        XWPFParagraph p=cell.addParagraph();
+//        String blipId= p.getDocument().addPictureData(new FileInputStream(new File("/home/cyl/桌面/u.jpeg")), XWPFDocument.PICTURE_TYPE_JPEG);
+//        document.createPicture(p,document.getAllPictures().size(),110,150,blipId);
+//        for(int i=0;i<2;i++){
+//            cell.removeParagraph(0);
+//        }
+////        document.createPictureCxCy(blipId,document.getAllPictures().size(),222,333);
+//        //照片over
+//        row=table.getRow(1);
+//        cell=row.getCell(1);cell.setText("汉");
+//        cell=row.getCell(3);cell.setText("江苏涟水");
+//        cell=row.getCell(5);cell.setText("江苏");
+//        row=table.getRow(2);
+//        cell=row.getCell(3);cell.setText("2016年7月");
+//        cell=row.getCell(5);cell.setText("良好");
+//        row=table.getRow(3);
+//        cell=row.getCell(1);cell.setText("大幅度大幅度反对法");
+////        mergeCellsHorizontal(table,3,1,2);
+//        cell=row.getCell(3);cell.setText("几十块的积分打孔积分抵扣");
+//        row=table.getRow(4);
+//        cell=row.getCell(2);cell.setText("金陵科技学院");
+//        cell=row.getCell(4);cell.setText("计算机科学与技术");
+//        row=table.getRow(5);
+//        cell=row.getCell(2);cell.setText("无");
+//        cell=row.getCell(4);cell.setText("无");
+//        row=table.getRow(6);
+//        cell=row.getCell(1);cell.setText("java工程师");
+//        row=table.getRow(9);
+//        cell=row.getCell(1);cell.setText("2012年9月-2016年6月 金陵科技学院 \n 2016年7月-2017年3月 南京YK电气有限公司 \n 2017年4月-至今 南京安链数据科技有限公司 ");
+//
+//        row=table.getRow(10);
+//        cell=row.getCell(1);cell.setText("无");
+//        row=table.getRow(11);
+//        cell=row.getCell(1);cell.setText("2016年 优秀 "+"\n"+"2017年 优秀");
+//        row=table.getRow(12);
+//        cell=row.getCell(1);cell.setText("dd");
+//        for(int i=0;i<5;i++){
+//            row=table.getRow(14+i);
+//            cell=row.getCell(1);
+//            cell.setText("父亲"+i);
+//            cell=row.getCell(2);cell.setText("张三"+i);
+//            cell=row.getCell(3);cell.setText("24"+i+1);
+//            cell=row.getCell(4);cell.setText("党员");
+//            cell=row.getCell(5);cell.setText("警察"+i);
+//        }
+        FileOutputStream fo=new FileOutputStream("C:\\Users\\Administrator\\Desktop\\td\\dg.docx");
         document.write(fo);
         fi.close();
     }
@@ -150,6 +166,6 @@ public class GetWord2 {
         return byteArray;
     }
     public static void main(String[] args) throws IOException, org.apache.poi.openxml4j.exceptions.InvalidFormatException {
-        getWord("/home/cyl/桌面/at.docx");
+        getWord("C:\\Users\\Administrator\\Desktop\\dfd.docx");
     }
 }
