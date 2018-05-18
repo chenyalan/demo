@@ -4,6 +4,7 @@ import org.apache.poi.xwpf.usermodel.*;
 import org.openxmlformats.schemas.wordprocessingml.x2006.main.*;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,12 +17,15 @@ public class GetWord2 {
         FileInputStream fi=new FileInputStream(file);
         CustomXWPFDocument document=new CustomXWPFDocument(fi);
         List<XWPFTable> tables=document.getTables();
-        for(int i=0;i<tables.size();i++){
-            XWPFTable table=document.getTables().get(i);
-            XWPFTableRow row;
-            XWPFTableCell cell;
+        List<XWPFTable> patentInfo=new ArrayList<>();
+        for(XWPFTable t:tables){
+            if(t.getRow(0).getCell(0).getText().equals("Patent Information")){
+                patentInfo.add(t);
+            }
+        }
+        for(XWPFTable p:patentInfo){
             int hang=0;
-            for(XWPFTableRow r:table.getRows()){
+            for(XWPFTableRow r:p.getRows()){
                 int lie=0;
                 for(XWPFTableCell c:r.getTableCells()){
                     System.out.print(hang+"行"+lie+"列:"+c.getText()+ "\t");
@@ -30,7 +34,9 @@ public class GetWord2 {
                 System.out.print("\n");
                 hang++;
             }
+            System.out.println("\n");
         }
+        System.out.println("一共有"+patentInfo.size()+"个表格");
 //        XWPFTable table=document.getTables().get(0);
 //        XWPFTableRow row;
 //        XWPFTableCell cell;
@@ -97,8 +103,8 @@ public class GetWord2 {
 //            cell=row.getCell(4);cell.setText("党员");
 //            cell=row.getCell(5);cell.setText("警察"+i);
 //        }
-        FileOutputStream fo=new FileOutputStream("C:\\Users\\Administrator\\Desktop\\td\\dg.docx");
-        document.write(fo);
+//        FileOutputStream fo=new FileOutputStream("C:\\Users\\Administrator\\Desktop\\td\\dg.docx");
+//        document.write(fo);
         fi.close();
     }
     public static XWPFTableCell shuiPing(XWPFTableCell cell){
@@ -166,6 +172,6 @@ public class GetWord2 {
         return byteArray;
     }
     public static void main(String[] args) throws IOException, org.apache.poi.openxml4j.exceptions.InvalidFormatException {
-        getWord("C:\\Users\\Administrator\\Desktop\\dfd.docx");
+        getWord("/home/cyl/桌面/d.docx");
     }
 }
