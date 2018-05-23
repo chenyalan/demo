@@ -2,7 +2,11 @@ package com.andlinks.mybatis.utils;
 
 import com.andlinks.mybatis.common.ResultData;
 
+import com.andlinks.mybatis.entity.httpdo.HttpDO;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import javafx.beans.binding.ObjectExpression;
+import jdk.nashorn.internal.parser.TokenType;
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -23,7 +27,7 @@ public class HttpUtils {
      * 1.实例化一个java.net.URL对象； 2.通过URL对象的openConnection()方法得到一个java.net.URLConnection;
      * 3.通过URLConnection对象的getInputStream()方法获得输入流； 4.读取输入流； 5.关闭资源；
      */
-    public static<T> T get(String urlStr) throws Exception
+    public static<T> T get(String urlStr, TypeToken<T> token) throws Exception
     {
 
         URL url = new URL(urlStr);
@@ -39,8 +43,10 @@ public class HttpUtils {
             sb.append(line + "\n");
         }
         br.close();
-        System.out.println(sb.toString());
-        return (T) sb.toString();
+//        System.out.println(sb.toString());
+        Gson gson=new Gson();
+        T t=gson.fromJson(sb.toString(),token.getType());
+        return t;
     }
 
     /**
@@ -112,7 +118,7 @@ public class HttpUtils {
 //        }
         String getUrl="http://42.123.99.75:20001/api/changcheng/company/news?page={0}&count={1}";
         try{
-            Object resultData= HttpUtils.get(MessageFormat.format(getUrl, new Object[]{1,10}));
+            Object resultData= HttpUtils.get(MessageFormat.format(getUrl, new Object[]{1,10}),new TypeToken<HttpDO>(){});
             System.out.println(resultData);
         }catch (Exception e){
             e.printStackTrace();

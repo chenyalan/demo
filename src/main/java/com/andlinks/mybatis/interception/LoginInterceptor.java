@@ -28,6 +28,7 @@ public class LoginInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object o) throws Exception {
         Cookie userCookie= WebUtils.getCookie(request,"user");
         UserRedis userRedis;
+//        if(true)return true;
         if(userCookie!=null){
             userRedis=userRedisService.findByAccount(userCookie.getValue());
             if(userRedis==null){
