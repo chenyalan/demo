@@ -22,7 +22,7 @@ public class FileInputStreamTest {
         int num=0;
         int byteStart=0;
         try {
-             in = new FileInputStream("F:\\zoe\\springboot-mybatis-xml\\src\\main\\java\\com\\andlinks\\mybatis\\controller\\Handler.java");
+             in = new FileInputStream("/home/cyl/桌面/template.docx");
         } catch (FileNotFoundException e) {
             logger.error("文件错误");
         }

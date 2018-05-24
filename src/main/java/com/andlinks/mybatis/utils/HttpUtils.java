@@ -90,7 +90,7 @@ public class HttpUtils {
         { // 读取数据
             sb.append(line + "\n");
         }
-        br.close();
+
         return (T) sb.toString();
     }
     public static void main(String[] args) throws Exception {

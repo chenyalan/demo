@@ -12,6 +12,7 @@ import java.text.MessageFormat;
 
 /**
  * Created by 陈亚兰 on 2018/5/23.
+ * 测试http访问，利用TypeToken和Gson将取得的json对象转换成Java对象
  */
 @RestController
 @RequestMapping(value = "/test")
